@@ -1,4 +1,0 @@
-name: Unpack PAWS kit
-on: {push: {paths: [".github/workflows/unpack-kit.yml"]}}
-permissions: {contents: write}
-jobs: {unpack: {runs-on: ubuntu-latest, steps: [{uses: actions/checkout@v4}, {run: "echo '96792493f73038cb5f1af953de3236507c4ddb3cf5877d07740c8faba76743b9  PAWS-v1.0-plain.zip' | sha256sum -c && unzip -q PAWS-v1.0-plain.zip && rm -rf __MACOSX && git rm -q PAWS-v1.0-plain.zip && git add 'My Workspace' && test $(git ls-files 'My Workspace' | wc -l) -eq 95 && git config user.name TheBeckoningCat && git config user.email TheBeckoningCat@users.noreply.github.com && git commit -m 'PAWS v1.0 kit (My Workspace)' && git push"}]}}
