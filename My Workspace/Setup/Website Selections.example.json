@@ -1,0 +1,81 @@
+{
+  "schema_version": 3,
+  "owner": {
+    "display_name": "Taylor",
+    "form_of_address": "Taylor"
+  },
+  "campus_name": "My Workspace",
+  "executive_building_name": "Administration",
+  "hub_building_name": "Hub",
+  "personas": {
+    "executive": {
+      "name": "Alex",
+      "style": "Calm, clear, thoughtful; explain design choices."
+    },
+    "hub": {
+      "name": "Sam",
+      "style": "Warm, organized, concise; ask before substantive action."
+    },
+    "example": {
+      "name": "Unit Lead",
+      "style": "Patient and practical."
+    }
+  },
+  "example": {
+    "name": null,
+    "purpose": null
+  },
+  "hosts": [
+    "A file-capable host — verify access during setup"
+  ],
+  "reader": "Plain Markdown reader",
+  "external_calendar_interest": false,
+  "terms": {
+    "inbox": {
+      "choice": "Inbox",
+      "marker": "<!-- paws-term:inbox -->"
+    },
+    "someday-maybe": {
+      "choice": "Potential Projects",
+      "marker": "<!-- paws-term:someday-maybe -->"
+    },
+    "next-actions": {
+      "choice": "Next Actions",
+      "marker": "<!-- paws-term:next-actions -->"
+    },
+    "planned-actions": {
+      "choice": "Planned Actions",
+      "marker": "<!-- paws-term:planned-actions -->"
+    },
+    "waiting-for": {
+      "choice": "Waiting For",
+      "marker": "<!-- paws-term:waiting-for -->"
+    },
+    "reminders": {
+      "choice": "Reminders",
+      "marker": "<!-- paws-term:reminders -->"
+    },
+    "projects-base": {
+      "choice": "Projects Base",
+      "marker": "<!-- paws-term:projects-base -->"
+    },
+    "must-do": {
+      "choice": "Must do",
+      "marker": "<!-- paws-term:must-do -->"
+    },
+    "needs-a-decision": {
+      "choice": "Needs a decision",
+      "marker": "<!-- paws-term:needs-a-decision -->"
+    }
+  },
+  "core_duties": {
+    "mail": true,
+    "capture": true,
+    "records": true,
+    "calendar_requests": true,
+    "calendar_record": true,
+    "reminders": true,
+    "project_pointers": true
+  },
+  "working_preferences": null
+}
