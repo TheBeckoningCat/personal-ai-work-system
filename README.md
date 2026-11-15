@@ -39,10 +39,6 @@ sha256sum -c SHA256SUMS.txt
 | PAIH landing | https://thebeckoningcat.com/personal-ai-harness/ |
 | Hub zip | https://github.com/TheBeckoningCat/personal-ai-harness/releases/download/v0.1.0-beta/Campus-Operational-Hub-Starter-public.zip |
 | Building zip | https://github.com/TheBeckoningCat/personal-ai-harness/releases/download/v0.1.0-beta/Campus-Building-Starter-public.zip |
-| Part I | https://thebeckoningcat.com/articles/building-my-own-ai-harness/ |
-| Part II | https://thebeckoningcat.com/articles/inside-my-personal-ai-campus/ |
-| Part III | https://thebeckoningcat.com/articles/why-your-ai-harness-should-belong-to-you/ |
-| Part IV | https://thebeckoningcat.com/articles/build-your-own-personal-ai-harness/ |
 
 Optional later: the site PAIH page can link this GitHub repo for browse-before-download. Not required for this ship.
 
