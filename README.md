@@ -1,51 +1,54 @@
-# Personal AI Harness
+# PAWS: Personal AI Work System
 
-Public starter skeletons for **Personal AI Harness™** / AI Campus teaching materials from [thebeckoningcat.com](https://thebeckoningcat.com/).
+PAWS is a workspace made of plain Markdown files that any AI host can pick up. Every session starts from the same pages and ends the same way, so the next session continues where the last one stopped, even on a different app or model.
 
-This repository mirrors the Campus Public Launch Kit as **browseable plain-text trees** so you can inspect the files before (or instead of) downloading the zips.
+## Where this comes from
 
-## Browse before download
+This is my first attempt at something like this. I built it for my own work first, because I was tired of rebuilding context in every new AI conversation. It has been through a lot of trial and error, and I'm still learning as I go. I'm sure there are better ways to do parts of it, and I'd genuinely like to hear them. Issues, ideas and pull requests are all welcome.
 
-Prefer reading the trees here first:
+The places I'd most like help with:
 
-| Starter | Browse on GitHub | Live zip |
-| --- | --- | --- |
-| Operational Hub | [`starters/starter-operational-hub/`](starters/starter-operational-hub/) | [Campus-Operational-Hub-Starter-public.zip](https://github.com/TheBeckoningCat/personal-ai-harness/releases/download/v0.1.0-beta/Campus-Operational-Hub-Starter-public.zip) |
-| Domain / Building | [`starters/starter-building-package/`](starters/starter-building-package/) | [Campus-Building-Starter-public.zip](https://github.com/TheBeckoningCat/personal-ai-harness/releases/download/v0.1.0-beta/Campus-Building-Starter-public.zip) |
+* Getting Boundaries to hold more reliably across hosts without turning them into a wall of rules.
+* Keeping Begin Session and End Session short as a workspace grows.
+* Anything in the layout that feels like more structure than it needs.
 
-Entry doors after unpack (or while browsing): each package’s `START HERE.md`, plus `PUBLIC_README.md`, `GO.md`, and `USE NOTICE.md`.
+## Get it
 
-A compact folder map lives in [`starters/TREE.md`](starters/TREE.md).
+* **Plain kit:** `PAWS-v1.0-plain.zip` from the [v1.0.0 release](../../releases/tag/v1.0.0). The `My Workspace/` folder in this repo is the same kit, unzipped.
+* **Personalized:** the Builder on the [PAWS page](https://thebeckoningcat.com/personal-ai-work-system/) asks a few questions, applies a template and your names, and gives you a zip.
 
-## SHA-256 (GitHub release `v0.1.0-beta`)
-
-Verified against GitHub release [`v0.1.0-beta`](https://github.com/TheBeckoningCat/personal-ai-harness/releases/tag/v0.1.0-beta) on **2026-09-30** (Asia/Tokyo). Same digests as the beta publish checklist.
-
-| File | Bytes | SHA-256 |
-| --- | ---: | --- |
-| `Campus-Operational-Hub-Starter-public.zip` | 161722 | `389dfa87ab5f31468c82da91a7458515d04f6fc761c652de7e0b2e6ad9531d2f` |
-| `Campus-Building-Starter-public.zip` | 94363 | `43efeb8b9b97f20d2c6d2bbb41de804320246535bae77433cfad460925a3367a` |
-
-Same values are in [`SHA256SUMS.txt`](SHA256SUMS.txt). After download:
+To check the release zip:
 
 ```bash
-sha256sum -c SHA256SUMS.txt
+shasum -a 256 -c SHA256SUMS.txt
 ```
 
-## Site links
+## Shape
 
-| Role | URL |
-| --- | --- |
-| PAIH landing | https://thebeckoningcat.com/personal-ai-harness/ |
-| Hub zip | https://github.com/TheBeckoningCat/personal-ai-harness/releases/download/v0.1.0-beta/Campus-Operational-Hub-Starter-public.zip |
-| Building zip | https://github.com/TheBeckoningCat/personal-ai-harness/releases/download/v0.1.0-beta/Campus-Building-Starter-public.zip |
+95 files under `My Workspace/`:
 
-Optional later: the site PAIH page can link this GitHub repo for browse-before-download. Not required for this ship.
+* `Executive Unit/`, `Hub Unit/` and `Example Unit/`, each with the same numbered rooms (Inbox, Projects, Calendar, Potential Projects, Offices, SOPs). The executive unit holds the shared rules and procedures, and its `00 Start Here/` has `Start Here.md` and `End Session.md`.
+* `Boundaries.md`: what helpers may do alone, ask about first, and never do. It's filled in during setup.
+* `Daily Note.md`, `Projects Base.md`, `Next Actions.md` and `Needs the Owner's Decision.md` for the day to day work.
+* `Workspace Settings.md` maps folder names to stable IDs, so you can rename things without breaking links.
+* `Setup/` holds `SETUP.md`, plus `paws_setup.py` and `check_package.py` for the setup state and a link and structure check.
+* `AGENTS.md` and `CLAUDE.md` point hosts that read them to the same entry pages.
+* `Package/` has the version, manifest and release notes.
 
-## What these starters are
+## Running it
 
-- **Beta / betta-test** public markdown skeletons (not a one-click live campus).
-- Chatbot / paste-first path: drop the folder (or paste `START HERE.md` first) into ChatGPT, Gemini, Grok, and similar.
-- Markdown is the store of record. Obsidian is optional. No runnable `.command` / `.bat` in the public zips.
+Open the folder in a host that can read and write files there. The first time, give it the setup line from the kit's `README.md`. It follows `Setup/SETUP.md`, asks only what the Builder didn't already answer, and writes your Boundaries. After that, each session begins with `Start Here.md` and ends with `End Session.md`. The exact lines are in the kit's README.
 
-Full terms: each package’s `LICENSE.md` and `NOTICE.md`. © 2026 Colin P. Meyer.
+## Why it's built this way
+
+* **Plain files, not an app.** The record is readable, diffable and yours. Nothing runs in the background or connects to your accounts.
+* **Host agnostic.** No vendor or model is assumed. Pages link with ordinary relative links, so any host or editor can follow them.
+* **The same start and end every time.** Begin Session reads a short, fixed route. End Session writes down what changed. That handoff is what lets a different host pick up the work.
+* **Instructions, not enforcement.** Boundaries are written instructions the AI is asked to follow. They aren't a lock. How well they hold depends on the host and model, and in my beta some hosts followed every line while others didn't. Keep backups, and don't give an AI access to anything you can't afford to lose. How far to trust it is your call.
+* **Meant to be reshaped.** Rename the units, cut what you don't need, rewrite the rules. `check_package.py` will tell you if you broke a link.
+
+## License
+
+Free for personal and noncommercial educational use under the [PAWS Public Starter License](My%20Workspace/LICENSE.md). Names and credits are in the [NOTICE](My%20Workspace/NOTICE.md). A simple credit line is enough: "PAWS starter from thebeckoningcat.com".
+
+Copyright 2026 Colin P. Meyer.
